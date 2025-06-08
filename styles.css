@@ -1,0 +1,495 @@
+/* --------------------------------------
+   1. Base Reset
+   -------------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* --------------------------------------
+   2. Typography & Body
+   -------------------------------------- */
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Achterhoek.svg') no-repeat center center fixed;
+    background-size: cover;
+    color: #000000;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    background-color: #f3e8cc;
+}
+
+
+/* --------------------------------------
+   2.5. Hero Section (full-screen background)
+   -------------------------------------- */
+
+.hero {
+    height: 100vh;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('https://upload.wikimedia.org/wikipedia/commons/7/79/John_Deere_6620.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero nav {
+    position: absolute;
+    top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* --------------------------------------
+   3. Menu bar (top)
+   -------------------------------------- */
+
+.menu {
+    list-style: none;
+    position: fixed;
+    display: flex;
+    gap: 1.5rem;
+    z-index: 1001;
+}
+
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.309);
+    border-radius: 6px;
+}
+
+
+/* --------------------------------------
+   3.5. Drop-down menu within menu bar
+   -------------------------------------- */
+
+.menu>li {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(55, 124, 43, 0.806);
+    border-radius: 6px;
+    padding: 0.5rem 0;
+    min-width: 150px;
+    z-index: 1002;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu li a {
+    display: block;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    font-weight: 400;
+    transition: background 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+/* Hero Content */
+.hero-content h1 {
+    font-size: 6rem;
+    color: #ffdd00;
+    text-shadow: 2px 1px #377c2b;
+    margin-bottom: 0rem;
+    margin-top: 2rem;
+    animation: fadeIn 11.6s ease-in-out both;
+    opacity: 0;
+}
+
+.hero-content h2 {
+    font-size: 5rem;
+    color: #377c2b;
+    text-shadow: 2px 1px #ffdd00;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+    animation: fadeIn 4.6s ease-in-out both;
+    animation-delay: 1.5s;
+    opacity: 0;
+    border: none
+}
+
+.btn {
+    display: inline-block;
+    background-color: #377c2b;
+    color: #ffdd00;
+    padding: 0.65rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    text-shadow: 1px 1px #7ac043;
+    transition: background 11.2s ease;
+    animation: fadeIn 0.3s ease-in both;
+    animation-delay: 6.5s;
+    opacity: 0;
+}
+
+.btn:hover {
+    background-color: #ffdd00;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    from {
+        opacity: 0;
+        transform: translateY(90px);
+    }
+}
+
+/* --------------------------------------
+   4. Content Sections
+   -------------------------------------- */
+.content-section {
+    padding: 4rem 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #f3e8cc;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+section:nth-of-type(even) {
+    background-color: #f3e8cc;
+}
+
+.content-section h2 {
+    font-size: 1.75rem;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+/* Lists with Icons */
+.content-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.content-section ul li {
+    position: relative;
+    margin: 0.75rem 0;
+    padding-left: 1.75rem;
+}
+
+.content-section ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #1abc25;
+    font-size: 1rem;
+}
+
+/* Anchor Links in Sections */
+.content-section a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.content-section a:hover {
+    text-decoration: underline;
+}
+
+/* --------------------------------------
+   5. Responsive Adjustments
+   -------------------------------------- */
+
+@media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+    }
+
+    .content-section {
+        padding: 2rem 1rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.countdown {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.countdown-label {
+    font-size: 1.75rem;
+    color: #ffdd00;
+    text-shadow: 1px 1px #000000;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.countdown-value {
+    font-size: 1.9rem;
+    color: #ffdd00;
+    text-shadow: 1px 1px #000000;
+    font-weight: 700;
+    margin-top: 0.25rem;
+}
+
+#weather {
+    background: repeating-linear-gradient(45deg,
+            hotpink,
+            hotpink 10px,
+            limegreen 10px,
+            limegreen 20px);
+    border: 5px dotted yellow;
+    padding: 1rem;
+    transform: rotate(-1deg);
+    box-shadow: 0 0 25px magenta, inset 0 0 15px cyan;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    animation: wiggle 0.4s infinite alternate;
+}
+
+#weather h2 {
+    font-size: 2rem;
+    color: orange;
+    text-shadow: 2px 2px red;
+    background: linear-gradient(to right, gold, crimson);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowText 2s infinite linear;
+}
+
+#weather-data {
+    font-size: 1.5rem;
+    color: #00ffcc;
+    text-shadow: 1px 2px limegreen;
+    background: linear-gradient(to left, magenta, pink);
+    text-align: center;
+    padding: 0.5rem;
+    border: 3px dashed red;
+    transform: rotate(2deg) scale(1.1);
+    animation: blinkText 1.5s step-end infinite;
+}
+
+/* --------------------------------------
+   6. Annoying shit
+   -------------------------------------- */
+
+@keyframes blinkText {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes rainbowText {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes wiggle {
+    from {
+        transform: rotate(-0.25deg);
+    }
+
+    to {
+        transform: rotate(0.5deg);
+    }
+}
+
+.chaos-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.explode-button {
+    background: linear-gradient(to bottom, #ff00cc, #3333ff);
+    color: yellow;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    border: 5px ridge lime;
+    border-radius: 12px;
+    box-shadow: 0 8px #222, inset 0 0 10px white, 0 0 15px #ff0;
+    transform: scale(1);
+    transition: all 0.1s ease-in-out;
+    cursor: crosshair;
+    text-shadow: 1px 1px 2px black;
+    animation: pulseGlow 2s infinite alternate;
+}
+
+.explode-button:hover {
+    background: linear-gradient(to bottom, #00ffcc, #ff00ff);
+    transform: scale(1.1) rotate(-1deg);
+    box-shadow: 0 0 30px red, inset 0 0 20px yellow;
+}
+
+.explode-button:active {
+    animation: explode 0.3s forwards;
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 5px magenta, 0 0 15px cyan;
+    }
+
+    100% {
+        box-shadow: 0 0 20px yellow, 0 0 30px red;
+    }
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 0 5px white;
+    }
+
+    50% {
+        transform: scale(1.3) rotate(10deg);
+        box-shadow: 0 0 50px red;
+    }
+
+    100% {
+        transform: scale(0.8) rotate(-5deg);
+        box-shadow: 0 0 10px #ff0;
+    }
+}
+
+/* --------------------------------------
+   7. Footer
+   -------------------------------------- */
+
+footer {
+    background-color: #222;
+    color: #eee;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-nav {
+    margin-top: 1rem;
+}
+
+.footer-nav a {
+    color: #aaa;
+    margin: 0 1rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+/* --------------------------------------
+   8. Comment Content Sections
+   -------------------------------------- */
+
+.comment-section {
+    padding: 2rem 2rem;
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: rgb(246, 189, 237);
+    border-radius: 6px;
+    box-shadow: 1 4px 12px rgba(35, 41, 108, 0.455);
+    
+}
+
+.comment-section h1 {
+    font-family: 'Comic Sans MS', sans-serif;
+    font: 3.5em;
+    margin-bottom: 1em;
+    color: #377c2b;;
+    text-shadow: 2px 1px #ffdd00
+    
+}
+
+.comment-section body {
+    font-family: 'Comic Sans MS', sans-serif;
+    font: 1.2em;
+}
+
+.comment-section img {
+    max-width: 100%;
+}
+
+.comment-section p {
+    margin: 0 0 1em 0;
+    font: 2.5em;
+}
+
+@media (min-width: 500px) {
+    .media {
+        display: grid;
+        grid-template-columns: fit-content(200px) 1fr;
+        grid-template-rows: 1fr auto;
+        grid-template-areas:
+            "image content"
+            "image footer";
+        grid-gap: 10px;
+        margin-bottom: 4em;
+    }
+
+    .media-flip {
+        grid-template-columns: 1fr fit-content(250px);
+        grid-template-areas:
+            "content image"
+            "footer image";
+    }
+
+    .img {
+        grid-area: image;
+    }
+
+    .content {
+        grid-area: content;
+    }
+
+    .footer {
+        grid-area: footer;
+        font: 0.7em sans-serif;
+        
+    }
+}
