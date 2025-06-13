@@ -21,16 +21,6 @@ body {
 }
 
 
-figure {
-  margin: 0;
-}
-
-.sub {
-    font-size: 0.7rem;
-    margin: 0;
-
-}
-
 /* --------------------------------------
    2.5. Hero Section (full-screen background)
    -------------------------------------- */
@@ -39,7 +29,7 @@ figure {
     height: 100vh;
     background:
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('https://upload.wikimedia.org/wikipedia/commons/7/79/John_Deere_6620.jpg') center/cover no-repeat;
+        url('op-de-sjon-deer.jpg') center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
