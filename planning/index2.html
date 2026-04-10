@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="favicon6.ico" type="image/x-icon">
     <title>Planning</title>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="styles2.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles2.css" />
 </head>
 
 <body id="home">
@@ -16,43 +16,143 @@
         <nav>
             <ul class="menu">
                 <li><a href="../">Home</a></li>
-                <li><a href="https://greenmeister.nl/coffeeshop/diamond-doetinchem">Shop</a></li>
                 <li class="dropdown">
-                    <a href="#">Sexy Vrouwen Op Middellange Afstand ▾</a>
+                    <a href="#">Sexy Vrouwen op de Middellange Afstand ▾</a>
                     <ul class="dropdown-menu">
-                        <li><a href="https://nl.wikipedia.org/wiki/Deodorant">Openluchtcafe</a></li>
-                        <li><a href="https://en.wikipedia.org/wiki/Nicknames_of_Chicago#Chiraq">Hummelo Noord</a></li>
-                        <li><a
-                                href="https://nl.wikipedia.org/wiki/VN-verdrag_tegen_grensoverschrijdende_georganiseerde_misdaad">De
-                                Beinum</a></li>
-                        <li><a href="https://nl.wikipedia.org/wiki/Inteeltco%C3%ABffici%C3%ABnt">Dremp</a></li>
+                        <li><a href="https://nl.wikipedia.org/wiki/Hemel">Eldrik</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Sexy Vrouwen waar U toch Echt een Flinke Omrit voor Zal Moeten Maken ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://nl.wikipedia.org/wiki/Zinloos_geweld">Didam</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
+
+        <div class="nickname-generator">
+            <h1>Wie bunnik?</h1>
+            <label>Eerste letter voornaam:
+                <input type="text" id="firstLetter" maxlength="1">
+            </label><br>
+
+            <label>Geboorte maand:
+                <select id="birthMonth">
+                    <option value="">Welk</option>
+                    <option value="Januari">Januari</option>
+                    <option value="Februari">Februari</option>
+                    <option value="Maart">Maart</option>
+                    <option value="April">April</option>
+                    <option value="Mei">Mei</option>
+                    <option value="Juni">Juni</option>
+                    <option value="Juli">Juli</option>
+                    <option value="Augustus">Augustus</option>
+                    <option value="September">September</option>
+                    <option value="Oktober">Oktober</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
+            </label><br>
+
+            <label>Geboorte dag:
+                <input type="number" id="birthDay" min="1" max="31">
+            </label><br><br>
+
+            <button onclick="generateNickname()">Onthul mien identiteit</button>
+
+            <p id="result" style="font-weight: bold; font-size: 1.8rem; color: rgb(231, 0, 150); margin-top: 1rem;"></p>
+
+            <script>
+                const adjectives = {
+                    A: "kale",
+                    B: "roekeloze",
+                    C: "vettevingerige",
+                    D: "Eldrikse",
+                    E: "goed geoliede",
+                    F: "alderbastende",
+                    G: "sloerige",
+                    H: "spekgladde",
+                    I: "poar nemmende",
+                    J: "agrarische",
+                    K: "kakelverse",
+                    L: "glibberige",
+                    M: "Nieuw-Wehlse",
+                    N: "schurende",
+                    O: "onmundige",
+                    P: "schoevende, snoevende",
+                    Q: "",
+                    R: "strukendukende",
+                    S: "verheytoldijkse",
+                    T: "moesmakende",
+                    U: "kneiter knaaiende",
+                    V: "certified boerende",
+                    W: "stadse",
+                    X: "",
+                    Y: "oehoe oehoerende™",
+                    Z: "snoei-klare"
+                };
+
+                const monthNouns = {
+                    Januari: "smikkelbeer",
+                    Februari: "gladiatorgenieter",
+                    Maart: "kip mikkel",
+                    April: "dreumes",
+                    Mei: "papper en nathouder",
+                    Juni: "drietlip",
+                    Juli: "tinglijr",
+                    Augustus: "spaaiqueen",
+                    September: "beunhaas",
+                    October: "smeerpiep",
+                    November: "knasterd",
+                    December: "slakkenfluusteraar"
+                };
+
+                const dayModifiers = [
+                    "uut Nieuw-Wehl ofzo", "van de cannaval", "van Koenders", "uut de Beinum", "op de Sjon Deere",
+                    "zunder de vrijheid van een fiets", "onderweg noar floephoes", "die een poar nemmt",
+                    "met een mexicano in de spiekerboks", "met laxerende werking", "met sloerigheid in de rakkert", "die onder den draod deur vret",
+                    "met een frikandelbroodje in de tes", "met schuurprobleemn", "die kneitert noch knaait", "met big knasterd energy",
+                    "in de achterhoek arena", "en ie bunt er eentje van Koenders", "die kan spaaien als de beste",
+                    "onderweg vanuut Zelhem", "en dokters haten ow", "van de cannaval", "met dremptse roets",
+                    "en doesburg is van oew", "die gewoon met de handen wil warken", "met n veurliefde veur lauwe gladiator", "moar toch n mooie knasterd",
+                    "met de klompn vol", "die zich mot wassen", "zwetend in sequoia", "en nou ist mooi gewes"
+                ];
+
+                function generateNickname() {
+                    const firstLetter = document.getElementById("firstLetter").value.toUpperCase();
+                    const birthMonth = document.getElementById("birthMonth").value;
+                    const birthDay = parseInt(document.getElementById("birthDay").value);
+
+                    if (firstLetter == "Q") {
+                        document.getElementById("result").innerText = "Ophollen, oew noam begint nie met Q.";
+                        return;
+                    }
+
+                    if (firstLetter == "X") {
+                        document.getElementById("result").innerText = "Ophollen, oew noam begint nie met X.";
+                        return;
+                    }
+
+                    if (!adjectives[firstLetter] || !monthNouns[birthMonth] || isNaN(birthDay)) {
+                        document.getElementById("result").innerText = "Alles goed invuln knaap";
+                        return;
+                    }
+
+                    const adjective = adjectives[firstLetter];
+                    const noun = monthNouns[birthMonth];
+                    const modifier = dayModifiers[(birthDay - 1) % dayModifiers.length];
+
+                    const nickname = `${adjective} ${noun} ${modifier}`;
+                    document.getElementById("result").innerText = `Ie bunt een ${nickname}`;
+                }
+            </script>
+
+        </div>
+
     </header>
 
-    <section id="schedule" class="content-section">
-        <h2 style="color: #377c2b; background: none; text-shadow: 2px 2px #ffdd00;">Infromatie: dag 1</h2>
-        <ul>
-            <li>10:00 AM – Welkom &amp; Welkomstwoord</li>
-            <li>11:00 AM – Keynote Speaker</li>
-            <li>12:30 PM – Lunch</li>
-            <li> 2:00 PM – Workshop Snelspaaien</li>
-            <li> 4:00 PM – Network event</li>
-            <li> 5:00 PM – Eindklier</li>
-            <li>
-                <marquee behavior="scroll" direction="up" scrollamount="2.2" height="13">
-                    <p>Je wordt met volle maag thuis gebracht.</p>
-                    <p>💀😂💀😂💀😂💀😂💀</p>
-                    <p>Neem je zwembroek mee.</p>
-                    <p>💀😂💀😂💀😂💀😂💀</p>
-                    <p>Snoeven, schoeven.</p>
-                    <p>💀😂💀😂💀😂💀😂💀</p>
-                </marquee>
-            </li>
-        </ul>
-    </section>
+
 
     <footer>
         <div class="footer-content">

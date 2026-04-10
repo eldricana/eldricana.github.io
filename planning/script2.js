@@ -41,5 +41,5 @@ fetch(url)
     document.getElementById("weather-data").textContent = desc;
   })
   .catch(() => {
-    document.getElementById("weather-data").textContent = "Weather unavailable.";
+    document.getElementById("weather-data").textContent = "Geen weer beschikbaar.";
   });

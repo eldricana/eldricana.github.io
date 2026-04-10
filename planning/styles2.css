@@ -434,16 +434,16 @@ footer {
     background-color: rgb(246, 189, 237);
     border-radius: 6px;
     box-shadow: 1 4px 12px rgba(35, 41, 108, 0.455);
-    
+
 }
 
 .comment-section h1 {
     font-family: 'Comic Sans MS', sans-serif;
     font: 3.5em;
     margin-bottom: 1em;
-    color: #377c2b;;
+    color: #377c2b;
+    ;
     text-shadow: 2px 1px #ffdd00
-    
 }
 
 .comment-section body {
@@ -490,6 +490,37 @@ footer {
     .footer {
         grid-area: footer;
         font: 0.7em sans-serif;
-        
+
     }
+}
+
+
+.nickname-generator {
+    border: 8px dotted rgb(157, 0, 255);
+    padding: 1.2rem;
+    background: rgb(239, 168, 192);
+    font-family: 'Comic Sans MS', cursive;
+    font-style: oblique;
+    width: auto;
+    margin: auto;
+}
+
+.nickname-generator input,
+.nickname-generator select {
+    margin: 0.5rem 0;
+}
+
+.nickname-generator button {
+    background: lime;
+    border: 2px solid green;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transform: rotate(-1deg);
+}
+
+.nickname-generator button:hover {
+    background: hotpink;
+    color: rgb(216, 255, 23);
+    transform: rotate(1deg) scale(1.1);
 }
