@@ -14,12 +14,18 @@ body {
     font-family: 'Comic Sans MS', sans-serif;
     background: url('https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Achterhoek.svg') no-repeat center center fixed;
     background-size: cover;
-    color: #000000;
+    color: #d42e2e;
     line-height: 1.6;
     scroll-behavior: smooth;
     background-color: #f3e8cc;
+    overflow-x: hidden;
 }
 
+@media (hover: hover) {
+    .button:hover {
+        transform: scale(1.2);
+    }
+}
 
 /* --------------------------------------
    2.5. Hero Section (full-screen background)
@@ -64,7 +70,7 @@ body {
     text-decoration: none;
     padding: 0.5rem 0.75rem;
     font-weight: 600;
-    transition: background 0.2s ease;
+    transition: background 3.5s ease;
 }
 
 .menu a:hover {
@@ -85,7 +91,7 @@ body {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 75px;
     background-color: rgba(55, 124, 43, 0.806);
     border-radius: 6px;
     padding: 0.5rem 0;

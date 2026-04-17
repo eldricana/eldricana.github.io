@@ -1,6 +1,6 @@
 ////// Countdown timer
 const countdownElement = document.getElementById('countdown-timer');
-const targetDate = new Date('2026-08-06T00:00:00');
+const targetDate = new Date('2026-08-05T00:00:00');
 
 function updateCountdown() {
   const now = new Date();
@@ -33,7 +33,7 @@ fetch(url)
     const weather = data.current_weather;
     const temp = weather.temperature;
     const wind = weather.windspeed;
-    const desc = `Tis ${temp}°C warm, en het waait ${wind} kneiters/uur`;
+    const desc = `Tis ${temp}°C warm en het waait ${wind} kneiters/uur`;
 
     document.getElementById("weather-data").textContent = desc;
   })
@@ -54,8 +54,8 @@ function spawnHaunter() {
   const vh = window.innerHeight;
 
   // estimate image size (adjust if needed)
-  const imgWidth = 120;
-  const imgHeight = 120;
+  const imgWidth = 96;
+  const imgHeight = 96;
 
   // random position fully inside viewport
   const x = Math.random() * (vw - imgWidth);
@@ -75,6 +75,26 @@ function spawnHaunter() {
 document.addEventListener('DOMContentLoaded', () => {
   spawnHaunter();
 });
+
+
+const overlay = document.getElementById('overlay');
+const audio = document.getElementById('bg-music');
+
+overlay.addEventListener('click', () => {
+  audio.play();
+
+  // Hide instead of remove (more reliable visually)
+  overlay.style.display = 'none';
+});
+
+//const audio = document.getElementById('bg-music');
+//function startAudio() {
+//  audio.play();
+//  document.removeEventListener('click', startAudio);
+//  document.removeEventListener('touchstart', startAudio);
+//}
+//document.addEventListener('click', startAudio);
+//document.addEventListener('touchstart', startAudio);
 
 //countdownElement.textContent =
 //`${days}d ${hours}h ${minutes}m ${seconds}s`;}
