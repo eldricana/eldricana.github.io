@@ -77,24 +77,37 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-const overlay = document.getElementById('overlay');
-const audio = document.getElementById('bg-music');
+window.addEventListener('DOMContentLoaded', () => {
+  const overlay = document.getElementById('overlay');
+  const button = document.getElementById('enter-btn');
+  const audio = document.getElementById('bg-music');
 
-overlay.addEventListener('click', () => {
-  audio.play();
+  // sanity check
+  console.log(button); // should NOT be null
 
-  // Hide instead of remove (more reliable visually)
-  overlay.style.display = 'none';
+  button.addEventListener('click', () => {
+    console.log('clicked'); // debug
+
+    audio.play();
+    overlay.style.display = 'none';
+  });
 });
 
+console.log(document.getElementById('enter-btn'));
+
+button.addEventListener('click', () => {
+  console.log('clicked');
+});
+
+//const overlay = document.getElementById('overlay');
 //const audio = document.getElementById('bg-music');
-//function startAudio() {
-//  audio.play();
-//  document.removeEventListener('click', startAudio);
-//  document.removeEventListener('touchstart', startAudio);
-//}
-//document.addEventListener('click', startAudio);
-//document.addEventListener('touchstart', startAudio);
+
+//overlay.addEventListener('click', () => {
+//audio.play();
+
+// Hide instead of remove (more reliable visually)
+//overlay.style.display = 'none';
+//);
 
 //countdownElement.textContent =
 //`${days}d ${hours}h ${minutes}m ${seconds}s`;}
