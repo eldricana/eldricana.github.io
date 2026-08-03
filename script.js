@@ -15,7 +15,7 @@ function updateCountdown() {
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
   countdownElement.textContent =
-    `Nog maar ${days} nachtjes slapen!`;
+    `Nog maar ${days+1} nachtjes slapen!`;
 }
 
 updateCountdown(); // run immediately
