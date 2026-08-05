@@ -7,7 +7,7 @@ function updateCountdown() {
   const diff = targetDate - now;
 
   if (diff <= 0) {
-    countdownElement.textContent = "Goddomme knaaien maar!";
+    countdownElement.textContent = "Knaai!";
     clearInterval(timer);
     return;
   }
