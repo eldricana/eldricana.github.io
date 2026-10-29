@@ -1,6 +1,6 @@
 ////// Countdown timer
 const countdownElement = document.getElementById('countdown-timer');
-const targetDate = new Date('2026-08-05T00:00:00');
+const targetDate = new Date('2027-08-05T00:00:00');
 
 function updateCountdown() {
   const now = new Date();
@@ -38,7 +38,7 @@ fetch(url)
     document.getElementById("weather-data").textContent = desc;
   })
   .catch(() => {
-    document.getElementById("weather-data").textContent = "Het weert niet.";
+    document.getElementById("weather-data").textContent = "Hoester met?";
   });
 
 function spawnHaunter() {
